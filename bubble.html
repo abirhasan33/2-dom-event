@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event bubble vai</title>
+</head>
+<body>
+    <h2>Event Bubble vai</h2>
+    <section id="section-contener">
+        <h4>Bubble</h4>
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum.</li>
+            <li id="second-item" class="item">Odit, odio!</li>
+            <li class="item">Ipsum, nam?</li>
+            <li class="item">Magni, alias.</li>
+            <li class="item">Aperiam, libero?</li>
+            <li class="item">Animi, maxime.</li>
+        </ul>
+    </section>
+
+    <script>
+        document.getElementById('second-item').addEventListener('click', function(event){
+            console.log('amr second1 tiem ');
+            // event.stopPropagation();
+            event.stopImmediatePropagation();
+        });
+        document.getElementById('second-item').addEventListener('click', function(event){
+            console.log('amr second2 tiem ');
+        });
+        document.getElementById('second-item').addEventListener('click', function(event){
+            console.log('amr second3 tiem ');
+        });
+        document.getElementById('second-item').addEventListener('click', function(event){
+            console.log('amr second4 tiem ');
+        });
+        // ul 
+        document.getElementById('list-container').addEventListener('click', function(){
+            console.log('amr UL tiem ')
+        });
+        // section 
+        document.getElementById('section-contener').addEventListener('click', function(){
+            console.log('section click ')
+        });
+    </script>
+</body>
+</html>

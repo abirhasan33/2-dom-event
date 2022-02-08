@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="clicking-mothod"></p>
+    <input id="input-field" type="text">
+    <button id="update-name">Update</button>
+    <button onclick="handleJustFunction()">Just function</button>
+    <button id="handle-event">drrect add Event Listener</button><br> <br>
+    <input id="input-add" type="text">
+    <button id="add-text">Add text...!</button> <br>
+    <textarea name="" id="textareas-add" cols="30" rows="10"></textarea>
+
+    <script>
+        // using function
+        function handleJustFunction(){
+             const p = document.getElementById("clicking-mothod");
+             p.innerText = 'set by using function';
+        }
+
+        // direct
+        document.getElementById('handle-event').addEventListener('click', function(){
+            const p = document.getElementById('clicking-mothod');
+            p.innerText= ' sert diret add event listeiner'
+        });
+        // direct 
+        document.getElementById('update-name').addEventListener('click', function(){
+            const input = document.getElementById('input-field')
+            const p = document.getElementById('clicking-mothod');
+            p.innerText = input.value;
+            input.value= '';
+        });
+        //direct
+        document.getElementById('add-text').addEventListener('click', function(){
+            const inputAdd = document.getElementById('input-add');
+            const textareasAdd = document.getElementById('textareas-add');
+            textareasAdd.innerText = inputAdd.value;
+            inputAdd.value= ' ';
+        })
+    </script>
+</body>
+</html>
